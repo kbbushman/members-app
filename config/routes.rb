@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 	post '/members', to: 'members#create'
 	get '/members/:id', to: 'members#show', as: 'member'
 
+	get '/login', to: 'sessions#new'
+	get '/logout', to: 'sessions#destroy'
+	post '/sessions', to: 'sessions#create'
+
 	# resources :members
 
 end

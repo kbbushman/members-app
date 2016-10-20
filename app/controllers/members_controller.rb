@@ -9,8 +9,11 @@ class MembersController < ApplicationController
 	end
 
 	def create
+		# @member = Member.create(member_params)
+		# redirect_to root_path
 		@member = Member.create(member_params)
-		redirect_to root_path
+    login(@member) # <-- log the user in
+    redirect_to @member # <-- go to show
 	end
 
 	def show
